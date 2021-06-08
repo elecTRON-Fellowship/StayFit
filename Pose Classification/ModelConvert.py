@@ -1,1 +1,9 @@
-{"metadata":{"language_info":{"name":"python","version":"3.6.6","mimetype":"text/x-python","codemirror_mode":{"name":"ipython","version":3},"pygments_lexer":"ipython3","nbconvert_exporter":"python","file_extension":".py"},"kernelspec":{"display_name":"Python 3","language":"python","name":"python3"}},"nbformat_minor":4,"nbformat":4,"cells":[{"cell_type":"code","source":"import tensorflow as tf\nfrom tensorflow import keras\n\ntf_lite_model = 'YogaPose_MobileNet.tflite'\nmodel = keras.models.load_model('/YogaNet_Model_3_MobileNet.h5')\ntf_lite_converter = tf.lite.TFLiteConverter.from_keras_model(model)\ntflite_model = tf_lite_converter.convert()\ntflite_modelname = tf_lite_model\nopen(tflite_modelname,\"wb\").write(tflite_model)","metadata":{"collapsed":false,"_kg_hide-input":false,"jupyter":{"outputs_hidden":false}},"execution_count":null,"outputs":[]}]}
+import tensorflow as tf
+from tensorflow import keras
+
+tf_lite_model = 'YogaPose_MobileNet.tflite'
+model = keras.models.load_model('/YogaNet_Model_3_MobileNet.h5')
+tf_lite_converter = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = tf_lite_converter.convert()
+tflite_modelname = tf_lite_model
+open(tflite_modelname,"wb").write(tflite_model)
