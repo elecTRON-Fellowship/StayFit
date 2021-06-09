@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Login App',
+      debugShowCheckedModeBanner: false, 
       theme: ThemeData(
         primaryColor: Colors.black,
       ),
