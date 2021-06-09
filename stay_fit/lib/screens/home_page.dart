@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../widgets/logo.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({ Key? key }) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-          child: Container(
+      child: Container(
         width: 560,
         height: 640,
         color: Color(0xff151515),
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
 }
 
 class GetStartedTray extends StatefulWidget {
-  const GetStartedTray({ Key? key }) : super(key: key);
+  const GetStartedTray({Key? key}) : super(key: key);
 
   @override
   _GetStartedTrayState createState() => _GetStartedTrayState();
@@ -73,15 +73,20 @@ class _GetStartedTrayState extends State<GetStartedTray> {
           SizedBox(
             width: 195,
             height: 36,
-            child: Text(
-              "Get Started",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xff151515),
-                fontSize: 32,
-                fontFamily: "Poppins",
-                fontWeight: FontWeight.w600,
+            child: GestureDetector(
+              child: Text(
+                "Get Started",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xff151515),
+                  fontSize: 32,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w600,
+                ),
               ),
+              onTap: () {
+                Navigator.pushNamed(context, '/options');
+              },
             ),
           ),
         ],
