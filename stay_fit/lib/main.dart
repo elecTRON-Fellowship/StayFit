@@ -4,6 +4,8 @@ import 'package:flutter_login_attempt/screens/login_screen.dart';
 import 'screens/options_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_page.dart';
+import 'screens/profile_screen.dart';
+import 'screens/wallet_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/options': (context) => OptionsScreen(),
+        '/profile': (context) => ProfileScreen(),
+        '/wallet': (context) => WalletScreen(),
       },
     );
   }
