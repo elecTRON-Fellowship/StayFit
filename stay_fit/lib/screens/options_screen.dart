@@ -8,13 +8,16 @@ class OptionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff151515),
         bottomNavigationBar: CustomBottonNavBar(),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assets/image/cropped_logo.png', height: 50),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Image.asset('assets/image/cropped_logo.png', height: 70),
+            ),
             OptionCard(
               "Meditation",
               "Start your day\nby spending some\ntime with yourself.",

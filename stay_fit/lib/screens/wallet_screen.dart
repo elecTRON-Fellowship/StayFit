@@ -11,7 +11,7 @@ class WalletScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Wallet'),
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xff151515),
       bottomNavigationBar: CustomBottonNavBar(),
     );
   }

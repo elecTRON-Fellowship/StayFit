@@ -6,7 +6,7 @@ class YogaScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xff151515),
       appBar: AppBar(
         title: Text("Yoga"),
       ),

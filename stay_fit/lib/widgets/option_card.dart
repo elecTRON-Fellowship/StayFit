@@ -79,15 +79,15 @@ class OptionCard extends StatelessWidget {
                 },
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.black),
+                      MaterialStateProperty.all<Color>(Color(0xff151515)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
+                      borderRadius: BorderRadius.circular(13.0),
                     ),
                   ),
                 ),
                 child: Text(
-                  'Start',
+                  '   Start   ',
                   style: TextStyle(color: Color(0xd600e0ff)),
                 ),
               )
