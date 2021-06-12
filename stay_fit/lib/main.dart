@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_attempt/screens/home_page.dart';
 import 'package:flutter_login_attempt/screens/login_screen.dart';
+import 'package:flutter_login_attempt/screens/yoga_screen.dart';
 import 'screens/options_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_page.dart';
 import 'screens/profile_screen.dart';
 import 'screens/wallet_screen.dart';
+import 'screens/yoga_screen.dart';
+import 'screens/meditation_screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(StayFit());
 
-class MyApp extends StatelessWidget {
+class StayFit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,6 +26,8 @@ class MyApp extends StatelessWidget {
         '/options': (context) => OptionsScreen(),
         '/profile': (context) => ProfileScreen(),
         '/wallet': (context) => WalletScreen(),
+        '/meditation': (context) => MeditationScreen(),
+        '/yoga': (context) => YogaScreen(),
       },
     );
   }
