@@ -28,7 +28,6 @@ class StayFit extends StatelessWidget {
       ),
       initialRoute: '/options',
       routes: {
-        // '/': (context) => HomePage(),
         '/options': (context) => OptionsScreen(),
         '/profile': (context) => ProfileScreen(),
         '/wallet': (context) => WalletScreen(),
