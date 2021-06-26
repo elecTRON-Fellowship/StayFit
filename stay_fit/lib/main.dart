@@ -24,11 +24,11 @@ class StayFit extends StatelessWidget {
       title: 'Login App',
       debugShowCheckedModeBanner: false, 
       theme: ThemeData(
-        primaryColor: Colors.black,
+        primaryColor: Colors.white,
       ),
-      initialRoute: '/options',
+      initialRoute: '/',
       routes: {
-        '/options': (context) => OptionsScreen(),
+        '/': (context) => OptionsScreen(),
         '/profile': (context) => ProfileScreen(),
         '/wallet': (context) => WalletScreen(),
         '/meditation': (context) => MeditationScreen(),

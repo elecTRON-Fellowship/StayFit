@@ -6,7 +6,7 @@ class MeditationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff151515),
+      backgroundColor: Color(0xffffffff),
       appBar: AppBar(
         title: Text("Meditation"),
       ),

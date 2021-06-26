@@ -11,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Profile'),
       ),
-      backgroundColor: Color(0xff151515),
+      backgroundColor: Color(0xffffffff),
       bottomNavigationBar: CustomBottonNavBar(),
     );
   }

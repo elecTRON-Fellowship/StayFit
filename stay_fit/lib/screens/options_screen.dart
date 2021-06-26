@@ -8,7 +8,7 @@ class OptionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff151515),
+        backgroundColor: Color(0xffffffff),
         bottomNavigationBar: CustomBottonNavBar(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.end,

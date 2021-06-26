@@ -45,7 +45,7 @@ class _YogaScreenState extends State<YogaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff151515),
+      backgroundColor: Color(0xffffffff),
       appBar: AppBar(
         title: Text("Yoga"),
       ),
