@@ -4,8 +4,8 @@ class StayFitLogo extends StatelessWidget {
   
   StayFitLogo(this.width, this.height);
 
-  double width;
-  double height;
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {

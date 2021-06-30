@@ -8,6 +8,7 @@ import 'screens/profile_screen.dart';
 import 'screens/wallet_screen.dart';
 import 'screens/yoga_screen.dart';
 import 'screens/meditation_screen.dart';
+import 'screens/pose_options_screen.dart';
 
 late List<CameraDescription> cameras;
 
@@ -32,6 +33,7 @@ class StayFit extends StatelessWidget {
         '/profile': (context) => ProfileScreen(),
         '/wallet': (context) => WalletScreen(),
         '/meditation': (context) => MeditationScreen(),
+        '/pose': (context) => PoseOptionScreen(),
         '/yoga': (context) => YogaScreen(cameras),
       },
     );
