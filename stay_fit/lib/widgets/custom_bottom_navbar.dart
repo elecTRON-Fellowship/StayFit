@@ -23,7 +23,7 @@ class CustomBottonNavBar extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [Color(0xff00ffb2), Color(0xd600e0ff)],
+          colors: [Color(0xff000000), Color(0xff434343)],
         ),
       ),
       padding: const EdgeInsets.only(
@@ -37,9 +37,9 @@ class CustomBottonNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          NavBarButton(Icon(Icons.home), 'Home', '/options'),
-          NavBarButton(Icon(Icons.person), 'Profile', '/profile'),
-          NavBarButton(Icon(Icons.account_balance_wallet), 'Wallet', '/wallet'),
+          NavBarButton(Icon(Icons.home, color: Colors.white), 'Home', '/'),
+          NavBarButton(Icon(Icons.person, color: Colors.white), 'Profile', '/profile'),
+          NavBarButton(Icon(Icons.account_balance_wallet, color: Colors.white), 'Wallet', '/wallet'),
         ],
       ),
     );
@@ -65,7 +65,7 @@ class NavBarButton extends StatelessWidget {
             this.label,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Color(0xff151515),
+              color: Color(0xffffffff),
               fontSize: 13,
               fontFamily: "Poppins",
               fontWeight: FontWeight.w600,

@@ -8,6 +8,7 @@ class MeditationScreen extends StatelessWidget {
 @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
        bottomNavigationBar: CustomBottonNavBar(),
       body: Column(
        
@@ -122,6 +123,11 @@ class MeditationScreen extends StatelessWidget {
           //   ),
           // )
         ],
+=======
+      backgroundColor: Color(0xffffffff),
+      appBar: AppBar(
+        title: Text("Meditation"),
+>>>>>>> f886947a20076ad1ec4299155c55d0a6d799b4ef
       ),
     );
   }
