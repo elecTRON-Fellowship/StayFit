@@ -8,6 +8,7 @@ import 'screens/profile_screen.dart';
 import 'screens/wallet_screen.dart';
 import 'screens/yoga_screen.dart';
 import 'screens/meditation_screen.dart';
+import 'screens/pose_options_screen.dart';
 
 late List<CameraDescription> cameras;
 
@@ -24,14 +25,15 @@ class StayFit extends StatelessWidget {
       title: 'Login App',
       debugShowCheckedModeBanner: false, 
       theme: ThemeData(
-        primaryColor: Colors.black,
+        primaryColor: Colors.white,
       ),
-      initialRoute: '/options',
+      initialRoute: '/',
       routes: {
-        '/options': (context) => OptionsScreen(),
+        '/': (context) => OptionsScreen(),
         '/profile': (context) => ProfileScreen(),
         '/wallet': (context) => WalletScreen(),
         '/meditation': (context) => MeditationScreen(),
+        '/pose': (context) => PoseOptionScreen(),
         '/yoga': (context) => YogaScreen(cameras),
       },
     );

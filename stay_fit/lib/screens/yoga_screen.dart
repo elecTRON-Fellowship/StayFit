@@ -17,7 +17,7 @@ class _YogaScreenState extends State<YogaScreen> {
 
   List<CameraDescription> cameras;
   late CameraController controller;
-  var borderColor = Colors.red;
+  var borderColor = Color(0xff94000f);
 
   Future<void> loadCamera() async {
     this.cameras = await availableCameras();
@@ -45,12 +45,12 @@ class _YogaScreenState extends State<YogaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff151515),
+      backgroundColor: Color(0xffffffff),
       appBar: AppBar(
         title: Text("Yoga"),
       ),
       body: Container(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(10.0),
         color: borderColor,
         child: CameraPreview(controller),
       ),
