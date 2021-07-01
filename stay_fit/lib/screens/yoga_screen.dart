@@ -44,6 +44,8 @@ class _YogaScreenState extends State<YogaScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)!.settings.arguments as Map;
+
     return Scaffold(
       backgroundColor: Color(0xffffffff),
       appBar: AppBar(
