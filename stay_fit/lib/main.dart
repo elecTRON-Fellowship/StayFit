@@ -22,19 +22,19 @@ class StayFit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login App',
+      title: "StayFit",
       debugShowCheckedModeBanner: false, 
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => OptionsScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/wallet': (context) => WalletScreen(),
-        '/meditation': (context) => MeditationScreen(),
-        '/pose': (context) => PoseOptionScreen(),
-        '/yoga': (context) => YogaScreen(cameras),
+        "/": (context) => OptionsScreen(),
+        "/profile": (context) => ProfileScreen(),
+        "/wallet": (context) => WalletScreen(),
+        "/meditation": (context) => MeditationScreen(),
+        "/pose": (context) => PoseOptionScreen(),
+        "/yoga": (context) => YogaScreen(cameras),
       },
     );
   }
