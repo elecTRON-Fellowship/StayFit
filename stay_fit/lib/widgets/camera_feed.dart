@@ -47,10 +47,13 @@ class _CameraFeedState extends State<CameraFeed> {
             bytesList: img.planes.map((plane) {
               return plane.bytes;
             }).toList(),
-            threshold: 0.8,
+            threshold: 0.65,
             numResults: 5,
           ).then((recognitions) {
             log(recognitions![0]["label"]);
+            if (recognitions[0]["label"] == pose){
+              incrementCounter();
+            }
             isDetecting = false;
           });
         }
