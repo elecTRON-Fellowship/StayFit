@@ -25,39 +25,32 @@ class _CameraFeedState extends State<CameraFeed> {
   final Callback incrementCounter;
   bool isDetecting = false;
   var times = 0;
-  
-  
-  increaseTimes () {
-    setState(() {
-      times++;
-    });
-  }
 
   @override
   void initState() {
     super.initState();
-    log("SUPER INITSTATE WORKED");
     controller = CameraController(cameras[1], ResolutionPreset.max);
-    log("CONTROLLER DECLARED");
     controller.initialize().then((_) {
       if (!mounted) {
         return;
       }
-      log("CONTROLLER INITIALIZED");
       setState(() {});
       controller.startImageStream((CameraImage img) {
+        var im = img.planes.map((plane) {
+              return plane.bytes;
+            }).toList();
+        log(im.length.toString());
+        log(im[0].length.toString());
         if (!isDetecting) {
           isDetecting = true;
           Tflite.runModelOnFrame(
             bytesList: img.planes.map((plane) {
               return plane.bytes;
             }).toList(),
-            imageHeight: 224,
-            imageWidth: 224,
+            threshold: 0.8,
+            numResults: 5,
           ).then((recognitions) {
-            log(recognitions.toString());
-            log("TIMES = $times");
-            increaseTimes();
+            log(recognitions![0]["label"]);
             isDetecting = false;
           });
         }
