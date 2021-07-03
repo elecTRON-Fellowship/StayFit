@@ -1,4 +1,6 @@
 # Miscellaneous
+.launch.json
+.vscode/
 *.class
 *.log
 *.pyc
