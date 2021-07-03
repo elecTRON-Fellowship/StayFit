@@ -62,9 +62,7 @@ class _YogaScreenState extends State<YogaScreen> {
       });
       sleep(const Duration(seconds: 2));
       return Scaffold(
-          appBar: AppBar(
-            title: Text("Yoga"),
-          ),
+          appBar: AppBar(),
           body: Center(
             child: Container(
               width: double.maxFinite,
@@ -104,12 +102,15 @@ class _YogaScreenState extends State<YogaScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Great job!", style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),),
+                  Text(
+                    "Great job!",
+                    style: TextStyle(
+                      fontFamily: "Poppins",
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
                   Icon(
                     Icons.check_circle,
                     size: 200,
@@ -149,9 +150,7 @@ class _YogaScreenState extends State<YogaScreen> {
 
     return Scaffold(
       backgroundColor: Color(0xffffffff),
-      appBar: AppBar(
-        title: Text("Yoga"),
-      ),
+      appBar: AppBar(),
       body: Container(
         padding: EdgeInsets.all(10.0),
         color: borderColor,
