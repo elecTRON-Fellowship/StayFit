@@ -8,7 +8,7 @@ class OptionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff151515),
+        backgroundColor: Color(0xffffffff),
         bottomNavigationBar: CustomBottonNavBar(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -28,7 +28,7 @@ class OptionsScreen extends StatelessWidget {
               "Yoga",
               "Time to move some\nmuscles and get\nthe blood flowing.",
               Image.asset("assets/image/downdog_pose.png", height: 80),
-              "/yoga",
+              "/pose",
             ),
           ],
         ),

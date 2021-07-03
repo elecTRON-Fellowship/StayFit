@@ -1,33 +1,40 @@
+import 'dart:async';
+import 'package:camera/camera.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_login_attempt/screens/home_page.dart';
-import 'package:flutter_login_attempt/screens/login_screen.dart';
-import 'package:flutter_login_attempt/screens/yoga_screen.dart';
+
 import 'screens/options_screen.dart';
-import 'screens/login_screen.dart';
-import 'screens/home_page.dart';
 import 'screens/profile_screen.dart';
 import 'screens/wallet_screen.dart';
 import 'screens/yoga_screen.dart';
 import 'screens/meditation_screen.dart';
+import 'screens/pose_options_screen.dart';
 
-void main() => runApp(StayFit());
+late List<CameraDescription> cameras;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
+  runApp(StayFit());
+}
 
 class StayFit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login App',
+      title: "StayFit",
       debugShowCheckedModeBanner: false, 
       theme: ThemeData(
-        primaryColor: Colors.black,
+        primaryColor: Colors.white,
       ),
+      initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
-        '/options': (context) => OptionsScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/wallet': (context) => WalletScreen(),
-        '/meditation': (context) => MeditationScreen(),
-        '/yoga': (context) => YogaScreen(),
+        "/": (context) => OptionsScreen(),
+        "/profile": (context) => ProfileScreen(),
+        "/wallet": (context) => WalletScreen(),
+        "/meditation": (context) => MeditationScreen(),
+        "/pose": (context) => PoseOptionScreen(),
+        "/yoga": (context) => YogaScreen(cameras),
       },
     );
   }
