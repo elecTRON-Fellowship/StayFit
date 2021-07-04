@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
+import 'package:http/http.dart' as http;
 
 typedef void Callback();
 
@@ -24,10 +25,10 @@ class _CameraFeedState extends State<CameraFeed> {
   final String pose;
   final Callback incrementCounter;
   bool isDetecting = false;
-  var times = 0;
+  var url = Uri.parse('http://default-tenant.app.mlops6.iguazio-c0.com:32700/');
 
   @override
-  void initState() {
+  void initState() async {
     super.initState();
     controller = CameraController(cameras[1], ResolutionPreset.max);
     controller.initialize().then((_) {
@@ -35,30 +36,41 @@ class _CameraFeedState extends State<CameraFeed> {
         return;
       }
       setState(() {});
-      controller.startImageStream((CameraImage img) {
-        var im = img.planes.map((plane) {
-              return plane.bytes;
-            }).toList();
-        log(im.length.toString());
-        log(im[0].length.toString());
-        if (!isDetecting) {
-          isDetecting = true;
-          Tflite.runModelOnFrame(
-            bytesList: img.planes.map((plane) {
-              return plane.bytes;
-            }).toList(),
-            threshold: 0.65,
-            numResults: 5,
-          ).then((recognitions) {
-            log(recognitions![0]["label"]);
-            if (recognitions[0]["label"] == pose){
-              incrementCounter();
-            }
+      controller.startImageStream(
+        (CameraImage img) {
+          var im = img.planes.map((plane) {
+            return plane.bytes;
+          }).toList();
+          if (!isDetecting) {
+            isDetecting = true;
+            runInference(img);
+            // Tflite.runModelOnFrame(
+            //   bytesList: img.planes.map((plane) {
+            //     return plane.bytes;
+            //   }).toList(),
+            //   threshold: 0.65,
+            //   numResults: 5,
+            // ).then(
+            //   (recognitions) {
+            //     if (recognitions![0]["label"] == pose) {
+            //       incrementCounter();
+            //     }
+            //     isDetecting = false;
+            //   },
+            // );
             isDetecting = false;
-          });
-        }
-      });
+          }
+        },
+      );
     });
+  }
+
+  runInference(CameraImage img) async {
+    var im = img.planes.map((plane) {
+            return plane.bytes;
+          }).toList();
+    var response = await http.post(url, body: im);
+    log(response.body);
   }
 
   @override

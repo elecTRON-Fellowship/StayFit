@@ -2,7 +2,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:io';
-import 'dart:async';
 import 'package:tflite/tflite.dart';
 
 import '../widgets/camera_feed.dart';
