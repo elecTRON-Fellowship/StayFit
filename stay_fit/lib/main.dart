@@ -5,11 +5,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'dart:async';
 import 'package:camera/camera.dart';
 
+<<<<<<< HEAD
+import 'package:flutter/material.dart';
+import 'package:stay_fit/screens/meditation_screen.dart';
+
+=======
+>>>>>>> c431276eff379000dfe102cab3c368b729d5d131
 import 'screens/options_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/wallet_screen.dart';
 import 'screens/yoga_screen.dart';
-import 'screens/meditation_screen.dart';
 import 'screens/pose_options_screen.dart';
 
 late List<CameraDescription> cameras;
