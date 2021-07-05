@@ -2,7 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stay_fit/widgets/custom_list_tile.dart';
-// import 'package:stay_fit/widgets/custom_bottom_navbar.dart';
+import 'package:stay_fit/widgets/countdown_timer.dart';
 
 class MeditationScreen extends StatefulWidget {
   const MeditationScreen({Key? key}) : super(key: key);
@@ -90,6 +90,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
         backgroundColor: Colors.white,
         body: Column(
           children: [
+            CountDownTimer(), 
             Expanded(
               child: ListView.builder(
                   itemCount: musicList.length,
@@ -207,7 +208,6 @@ class _MeditationScreenState extends State<MeditationScreen> {
             ),
           ],
         ),
-        // bottomNavigationBar: CustomBottonNavBar(),
       ),
     );
   }

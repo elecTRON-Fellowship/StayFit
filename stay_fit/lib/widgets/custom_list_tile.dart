@@ -40,9 +40,10 @@ Widget customListTile({required String title, required String cover, onTap}) {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-              height: 30.0,
-              width: 30.0,
-              child: Icon(Icons.music_note, color: Colors.white)),
+            height: 30.0,
+            width: 30.0,
+            child: Icon(Icons.music_note, color: Colors.white),
+          ),
           SizedBox(width: 25.0),
           Column(
             children: [
