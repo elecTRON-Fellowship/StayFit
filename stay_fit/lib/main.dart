@@ -53,7 +53,6 @@ class _StayFitState extends State<StayFit> {
     if (_error) {
       return SomethingWentWrong();
     }
-
     return MaterialApp(
       title: "StayFit",
       debugShowCheckedModeBanner: false,

@@ -59,7 +59,6 @@ class _YogaScreenState extends State<YogaScreen> {
       setState(() {
         counter = count;
       });
-      sleep(const Duration(seconds: 2));
       return Scaffold(
           appBar: AppBar(),
           body: Center(
