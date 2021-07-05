@@ -1,9 +1,16 @@
+import 'package:flutter/material.dart';
+
+import 'package:firebase_core/firebase_core.dart';
+
 import 'dart:async';
 import 'package:camera/camera.dart';
 
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:stay_fit/screens/meditation_screen.dart';
 
+=======
+>>>>>>> c431276eff379000dfe102cab3c368b729d5d131
 import 'screens/options_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/wallet_screen.dart';
@@ -18,12 +25,42 @@ Future<void> main() async {
   runApp(StayFit());
 }
 
-class StayFit extends StatelessWidget {
+class StayFit extends StatefulWidget {
+  @override
+  _StayFitState createState() => _StayFitState();
+}
+
+class _StayFitState extends State<StayFit> {
+  bool _initialized = false;
+  bool _error = false;
+
+  initializeFlutterFire() async {
+    try {
+      await Firebase.initializeApp();
+      setState(() {
+        _initialized = true;
+      });
+    } catch (e) {
+      setState(() {
+        _error = true;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    initializeFlutterFire();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (_error) {
+      return SomethingWentWrong();
+    }
     return MaterialApp(
       title: "StayFit",
-      debugShowCheckedModeBanner: false, 
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
@@ -36,6 +73,23 @@ class StayFit extends StatelessWidget {
         "/pose": (context) => PoseOptionScreen(),
         "/yoga": (context) => YogaScreen(cameras),
       },
+    );
+  }
+}
+
+class SomethingWentWrong extends StatelessWidget {
+  const SomethingWentWrong({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+          home: Scaffold(
+        body: Center(
+          child: Container(
+            child: Center(child: Text("Something Went Wrong!")),
+          ),
+        ),
+      ),
     );
   }
 }
