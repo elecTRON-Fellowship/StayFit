@@ -57,7 +57,7 @@ class _CameraFeedState extends State<CameraFeed> {
               bytesList: img.planes.map((plane) {
                 return plane.bytes;
               }).toList(),
-              threshold: 0.15,
+              threshold: 0.65,
               numResults: 5,
             ).then(
               (recognitions) {
