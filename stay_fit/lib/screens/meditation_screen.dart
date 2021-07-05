@@ -2,8 +2,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stay_fit/widgets/custom_list_tile.dart';
+// import 'package:stay_fit/widgets/custom_bottom_navbar.dart';
 
-// ignore: camel_case_types
 class MeditationScreen extends StatefulWidget {
   const MeditationScreen({Key? key}) : super(key: key);
 
@@ -11,7 +11,6 @@ class MeditationScreen extends StatefulWidget {
   _MeditationScreenState createState() => _MeditationScreenState();
 }
 
-// ignore: camel_case_types
 class _MeditationScreenState extends State<MeditationScreen> {
   List musicList = [
     {
@@ -43,6 +42,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
           "https://i.pinimg.com/564x/f0/8b/1f/f08b1fbc5e260341e3379a962414463c.jpg"
     }
   ];
+
   String currentTitle = "";
   String currentCover = "";
   IconData btnIcon = Icons.play_arrow;
@@ -84,275 +84,131 @@ class _MeditationScreenState extends State<MeditationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(), 
         backgroundColor: Colors.white,
-        title: Text(
-          "Meditation ",
-          style: TextStyle(color: Colors.black),
-        ),
-        elevation: 0,
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-                itemCount: musicList.length,
-                itemBuilder: (context, index) => customListTile(
-                    onTap: () {
-                      playMusic(musicList[index]['url']);
-                      setState(() {
-                        currentTitle = musicList[index]['title'];
-                        currentCover = musicList[index]['Coverurl'];
-                      });
-                    },
-                    title: musicList[index]['title'],
-                    cover: musicList[index]['Coverurl'])),
-          ),
-          Container(
-            decoration: BoxDecoration(color: Colors.white, boxShadow: [
-              BoxShadow(color: Color(0x55212121)),
-            ]),
-            child: Column(
-              children: [
-                Slider.adaptive(
-                    value: position.inSeconds.toDouble(),
-                    min: 0.0,
-                    max: duration.inSeconds.toDouble(),
-                    onChanged: (value) {}),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      bottom: 8.0, left: 12.0, right: 12.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        height: 60.0,
-                        width: 60.0,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16.0),
-                            image: DecorationImage(
-                                image: NetworkImage(currentCover))),
-                      ),
-                      SizedBox(width: 10.0),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              currentTitle,
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            // Text(
-                            //   singer,
-                            //   style:TextStyle(color:Colors.grey,fontSize:14.0),
-                            // ),
-                          ],
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          if (isPlaying) {
-                            audioPlayer.pause();
-                            setState(() {
-                              btnIcon = Icons.pause;
-                              isPlaying = false;
-                            });
-                          } else {
-                            audioPlayer.resume();
-                            setState(() {
-                              btnIcon = Icons.play_arrow;
-                              isPlaying = true;
-                            });
-                          }
-                        },
-                        iconSize: 42.0,
-                        icon: Icon(btnIcon),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                  itemCount: musicList.length,
+                  itemBuilder: (context, index) => customListTile(
+                      onTap: () {
+                        playMusic(musicList[index]['url']);
+                        setState(() {
+                          currentTitle = musicList[index]['title'];
+                          currentCover = musicList[index]['Coverurl'];
+                        });
+                      },
+                      title: musicList[index]['title'],
+                      cover: musicList[index]['Coverurl'])),
             ),
-          ),
-        ],
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x3f000000),
+                    blurRadius: 4,
+                    offset: Offset(0, 4),
+                  ),
+                ],
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Color(0xff434343), Color(0xff000000)],
+                ),
+              ),
+              margin: const EdgeInsets.only(
+                top: 10, 
+                bottom: 10, 
+                left: 20,
+                right: 20,
+              ),
+              child: Container(
+                margin: const EdgeInsets.only(
+                  bottom: 20,
+                  left: 20,
+                  right: 20,
+                ),
+                child: Column(
+                  children: [
+                    Slider.adaptive(
+                        value: position.inSeconds.toDouble(),
+                        min: 0.0,
+                        max: duration.inSeconds.toDouble(),
+                        onChanged: (value) {}),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 12.0,
+                        right: 12.0,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 30.0,
+                            width: 30.0,
+                            child: Icon(
+                              Icons.music_note_rounded,
+                              color: Colors.white,
+                              size: 25,
+                            ),
+                          ),
+                          SizedBox(width: 10.0),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  currentTitle,
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    color: Colors.white,
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              if (isPlaying) {
+                                audioPlayer.pause();
+                                setState(() {
+                                  btnIcon = Icons.play_arrow;
+                                  isPlaying = false;
+                                });
+                              } else {
+                                audioPlayer.resume();
+                                setState(() {
+                                  btnIcon = Icons.pause; 
+                                  isPlaying = true;
+                                });
+                              }
+                            },
+                            iconSize: 30.0,
+                            icon: Icon(btnIcon, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+        // bottomNavigationBar: CustomBottonNavBar(),
       ),
     );
   }
 }
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:flutter/material.dart';
-// import 'package:stay_fit/widgets/custom_bottom_navbar.dart';
-
-
-// class MeditationScreen extends StatelessWidget {
-//   final fontFamily = "Roboto" ;
-  
-// @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//        bottomNavigationBar: CustomBottonNavBar(),
-//       body: Column(
-       
-//         children: <Widget>[
-//           Expanded(
-//             child: SingleChildScrollView(
-             
-//               child: Column(
-//                 crossAxisAlignment: CrossAxisAlignment.center,
-//                 children: <Widget>[
-//                   //Container for playlist header
-//                   SizedBox(height: 40,),
-//                   Container(
-//                     padding: EdgeInsets.only(left: 32, right: 32),
-//                     child: Row(
-//                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                       children: <Widget>[
-//                         Column(
-//                           crossAxisAlignment: CrossAxisAlignment.start,
-//                           children: <Widget>[
-//                             Text("Meditation Page", style: TextStyle(color: Colors.grey, fontFamily: fontFamily, fontWeight: FontWeight.w900, letterSpacing: 1),),
-//                             SizedBox(width: 4,),
-                            
-//                           ],
-//                         ),
-
-//                 //         //Container for button down button
-//                 //         Container(
-//                 //           padding: EdgeInsets.all(8),
-//                 //           decoration: BoxDecoration(
-//                 //             color: Colors.white,
-//                 // //            boxShadow: [BoxShadow(color: Colors.grey[200], spreadRadius: 1.0, blurRadius: 8.0)],
-//                 //             borderRadius: BorderRadius.all(Radius.circular(50)),
-
-//                 //           ),
-//                 //           child: Icon(Icons.keyboard_arrow_down, color: Colors.black, size: 30,),
-//                 //         )
-//                       ],
-//                     ),
-//                   ),
-
-//                   SizedBox(height: 40,),
-//                   //Container for ListView of playlist
-//                   ListView.separated(
-//                     padding: EdgeInsets.symmetric(horizontal: 32),
-//                       itemBuilder: (context, index){
-//                         return Row(
-//                           children: <Widget>[
-//                             IconButton(
-//                               icon: Icon(Icons.play_circle_outline, size: 30, color: Colors.grey[700],), onPressed: () {  },
-//                             ),
-
-//                             SizedBox(width: 32,),
-//                             Expanded(
-//                               child: Column(
-//                                 crossAxisAlignment: CrossAxisAlignment.start,
-//                                 children: <Widget>[
-//                                   Text("Oscar Hayes", style: TextStyle(color: Colors.grey, fontFamily: fontFamily, fontWeight: FontWeight.w900, letterSpacing: 0.5),),
-//                                   SizedBox(height: 4,),
-//                                   Text("The Dawn", style: TextStyle(color: Colors.grey[900], fontFamily: fontFamily, fontWeight: FontWeight.w700, letterSpacing: 1.5, fontSize: 22),)
-//                                 ],
-//                               ),
-//                             ),
-
-//                             Text("03:02", style: TextStyle(color: Colors.grey, fontFamily: fontFamily, fontWeight: FontWeight.w900, letterSpacing: 0.5),)
-//                           ],
-//                         );
-//                       },
-//                       separatorBuilder: (context, index) =>Divider(height: 40,),
-//                       itemCount: 6,
-//                     shrinkWrap: true,
-//                     controller: ScrollController(keepScrollOffset: false),
-//                   ),
-
-//                 ],
-//               ),
-//             ),
-//           ),
-//           SizedBox(height: 40,),
-//           //Container for blue PlayContainer
-//           // Container(
-//           //   padding: EdgeInsets.all(32),
-//           //   color: Colors.lightBlue,
-//           //   width: double.infinity,
-//           //   child: Row(
-//           //     children: <Widget>[
-//           //       IconButton(icon: Icon(Icons.play_circle_outline, size: 30, color: Colors.white,), color: Colors.white, onPressed: () {  },),
-
-//           //       SizedBox(width: 32,),
-
-//           //       Expanded(
-//           //         child: Column(
-//           //           crossAxisAlignment: CrossAxisAlignment.start,
-//           //           children: <Widget>[
-//           //             Text("Oscar Hayes", style: TextStyle(color: Colors.white, fontFamily: fontFamily, fontWeight: FontWeight.w300, letterSpacing: 0.5),),
-//           //             Text("The Dawn", style: TextStyle(color: Colors.grey[100], fontFamily: fontFamily, fontWeight: FontWeight.w500, letterSpacing: 1.5, fontSize: 22),),
-//           //           ],
-//           //         ),
-//           //       ),
-
-//           //       SizedBox(width: 32,),
-//           //       Container(
-//           //         padding: EdgeInsets.all(8),
-//           //         decoration: BoxDecoration(
-//           //           color: Colors.white,
-//           //         //  boxShadow: [BoxShadow(color: Colors.grey[200], spreadRadius: 1.0, blurRadius: 8.0)],
-//           //           borderRadius: BorderRadius.all(Radius.circular(50)),
-//           //         ),
-//           //         child: Icon(Icons.keyboard_arrow_down, color: Colors.black, size: 30,),
-//           //       )
-//           //     ],
-//           //   ),
-//           // )
-//         ],
-//       ),
-//     );
-//   }
-// }
