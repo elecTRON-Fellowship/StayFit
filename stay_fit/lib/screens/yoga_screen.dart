@@ -2,7 +2,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:io';
-import 'dart:async';
 import 'package:tflite/tflite.dart';
 
 import '../widgets/camera_feed.dart';
@@ -60,7 +59,6 @@ class _YogaScreenState extends State<YogaScreen> {
       setState(() {
         counter = count;
       });
-      sleep(const Duration(seconds: 2));
       return Scaffold(
           appBar: AppBar(),
           body: Center(
