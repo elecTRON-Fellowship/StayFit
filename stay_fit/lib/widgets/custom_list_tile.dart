@@ -31,8 +31,8 @@ Widget customListTile({required String title, required String cover, onTap}) {
         bottom: 20,
       ),
       margin: const EdgeInsets.only(
-        top: 5,
-        bottom: 5,
+        top: 10,
+        bottom: 10,
         left: 20,
         right: 20,
       ),

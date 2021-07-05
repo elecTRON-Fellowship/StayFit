@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stay_fit/widgets/custom_list_tile.dart';
 import 'package:stay_fit/widgets/countdown_timer.dart';
+import 'package:stay_fit/widgets/custom_bottom_navbar.dart';
 
 class MeditationScreen extends StatefulWidget {
   const MeditationScreen({Key? key}) : super(key: key);
@@ -85,7 +86,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold( 
         appBar: AppBar(), 
         backgroundColor: Colors.white,
         body: Column(
@@ -208,6 +209,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
             ),
           ],
         ),
+        bottomNavigationBar: CustomBottonNavBar(),
       ),
     );
   }
