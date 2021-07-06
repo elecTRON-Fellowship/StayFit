@@ -32,5 +32,13 @@ Despite not having a lot of knowledge about Flutter we chose to go with it to bu
 ## What we learned🎉
 We got to learn about stuff related to MLOps, especially MLRun. We also got to use and test out Iguazio! Apart from this we also learned about the working of Firebase and how we could integrate it in our application for our use case. We also came across and learned about different architectures to try for our models before finalizing our current model.
 
-## What's next for StayFit🎓
+## Project Gallery📷
+<p align="center">
+<img src="https://github.com/elecTRON-Fellowship/StayFit/blob/aayush_design/design/1.png" alt="drawing"/>
+</p>
+<p align="center">
+<img src="https://github.com/elecTRON-Fellowship/StayFit/blob/aayush_design/design/2.png" alt="drawing"/>
+</p>
+
+## What's next for StayFit🚀
 A key feature of our application is the reward system and ERC20 crypto-tokens for which we need to make the tokens using Solidity (and Ethereum blockchain) and use web3dart to incorporate it in our app. The tokens are ready and we will be working on incorporating them into our application in v2 of StayFit.
