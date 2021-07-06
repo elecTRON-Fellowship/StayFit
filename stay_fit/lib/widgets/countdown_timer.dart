@@ -35,14 +35,14 @@ class _CountDownTimerState extends State<CountDownTimer> {
       padding: const EdgeInsets.only(
         left: 30,
         right: 30,
-        top: 20,
-        bottom: 20, 
+        top: 10,
+        bottom: 10, 
       ),
       margin: const EdgeInsets.only(
         top: 20,
         bottom: 20,
-        left: 20,
-        right: 20,
+        left: 10,
+        right: 10, 
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
@@ -71,8 +71,8 @@ class _CountDownTimerState extends State<CountDownTimer> {
             onTap: () => _controller.start(),
             child: Container(
               margin: const EdgeInsets.only(
-                left: 20,
-                right: 20,
+                left: 15,
+                right: 15,
               ),
               child: Icon(Icons.play_arrow_outlined, color: Colors.white, size: 30), 
             ),
@@ -81,8 +81,8 @@ class _CountDownTimerState extends State<CountDownTimer> {
             onTap: () => _controller.pause(),
             child: Container(
               margin: const EdgeInsets.only(
-                left: 20,
-                right: 20,
+                left: 15,
+                right: 15,
               ),
               child: Icon(Icons.pause, color: Colors.white, size: 30),
             ),
@@ -91,8 +91,8 @@ class _CountDownTimerState extends State<CountDownTimer> {
             onTap: () => _controller.reset(),
             child: Container(
               margin: const EdgeInsets.only(
-                left: 20,
-                right: 20,
+                left: 15,
+                right: 15,
               ),
               child: Icon(Icons.replay, color: Colors.white, size: 30), 
             ),

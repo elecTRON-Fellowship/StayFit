@@ -33,8 +33,8 @@ Widget customListTile({required String title, required String cover, onTap}) {
       margin: const EdgeInsets.only(
         top: 10,
         bottom: 10,
-        left: 20,
-        right: 20,
+        left: 10,
+        right: 10,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
