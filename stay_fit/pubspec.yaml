@@ -23,7 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    
 
   matrix2d: ^1.0.0
   camera: ^0.8.1+3

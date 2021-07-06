@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import 'dart:async';
 import 'package:camera/camera.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -8,6 +6,7 @@ import 'screens/options_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/wallet_screen.dart';
 import 'screens/yoga_screen.dart';
+import 'screens/meditation_screen.dart';
 import 'screens/pose_options_screen.dart';
 import 'package:stay_fit/screens/meditation_screen.dart';
 
