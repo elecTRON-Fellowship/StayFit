@@ -17,6 +17,7 @@ StayFit is a Mobile application that helps you keep your health in check in the 
 ![image](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 ![image](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
 ![image](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![image](https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black)
 
 
 We started off by building the design and prototype for the application. The complete prototyping was done on FIGMA and once we had done that we went on to build the image classification models. We used an open-source dataset from Kaggle for training our model, which can be found [here](https://www.kaggle.com/niharika41298/yoga-poses-dataset).</br> 
@@ -33,6 +34,7 @@ Despite not having a lot of knowledge about Flutter we chose to go with it to bu
 We got to learn about stuff related to MLOps, especially MLRun. We also got to use and test out Iguazio! Apart from this we also learned about the working of Firebase and how we could integrate it in our application for our use case. We also came across and learned about different architectures to try for our models before finalizing our current model.
 
 ## Project Gallery📷
+You Can check out the Figma Designs [here](https://www.figma.com/file/tEuKn1FEbi1hwfDHoG0YxS/StayFit?node-id=0%3A1)
 <p align="center">
 <img src="https://github.com/elecTRON-Fellowship/StayFit/blob/aayush_design/design/1.png" alt="drawing"/>
 </p>
