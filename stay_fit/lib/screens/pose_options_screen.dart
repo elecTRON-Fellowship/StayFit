@@ -22,36 +22,35 @@ class _PoseOptionScreenState extends State<PoseOptionScreen> {
             bottom: 20,
           ),
           child: SingleChildScrollView(
-            child: Column(
-              children: [
+              child: Column(
+            children: [
               PoseOptionCard(
                 "Downdog",
-                Image.asset("assets/image/meditation.png", height: 85),
+                Image.asset("assets/image/downdog_pose.png", height: 85),
+                "/meditation",
+              ),
+              PoseOptionCard(
+                "Warrior",
+                Image.asset("assets/image/warrior_pose.png", height: 85),
                 "/meditation",
               ),
               PoseOptionCard(
                 "Goddess",
-                Image.asset("assets/image/downdog_pose.png", height: 80),
+                Image.asset("assets/image/goddess_pose.png", height: 80),
                 "/pose",
               ),
               PoseOptionCard(
                 "Plank",
-                Image.asset("assets/image/meditation.png", height: 85),
+                Image.asset("assets/image/plank_pose.png", height: 85),
                 "/meditation",
               ),
               PoseOptionCard(
                 "Tree",
-                Image.asset("assets/image/downdog_pose.png", height: 80),
+                Image.asset("assets/image/tree_pose.png", height: 80),
                 "/pose",
               ),
-              PoseOptionCard(
-                "Warrior",
-                Image.asset("assets/image/meditation.png", height: 85),
-                "/meditation",
-              ),
             ],
-            )
-          ),
+          )),
         ),
       ),
       bottomNavigationBar: CustomBottonNavBar(),
